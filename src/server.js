@@ -8,8 +8,8 @@ import {
   unauthorizedErrorHandler,
   genericErrorHandler
 } from "./errorHandlers.js";
-import userRouter from "./api/users/index.js";
-import accomodationRouter from "./api/accomodations/index.js";
+import usersRouter from "./api/users/index.js";
+import accomodationRouter from "./api/accomodation/index.js";
 
 const server = express();
 const port = process.env.PORT;
@@ -17,7 +17,7 @@ const port = process.env.PORT;
 server.use(cors());
 server.use(express.json());
 
-server.use("/users", userRouter);
+server.use("/users", usersRouter);
 server.use("/accomodations", accomodationRouter);
 
 server.use(notFoundErrorHandler);
